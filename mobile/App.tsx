@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StatusBar } from "react-native";
-import { Background } from "./src/components/background";
+import { Background } from "./src/components/Background";
 
 import {
   useFonts,
@@ -9,8 +9,8 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
-import { Home } from "./src/screens/home";
-import { Loading } from "./src/components/loading";
+import { Loading } from "./src/components/Loading";
+import { AppRoutes } from "./src/routes/app.routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +27,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <AppRoutes /> : <Loading />}
     </Background>
   );
 }
