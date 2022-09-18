@@ -4,7 +4,7 @@ import GameCard from "./components/GameCard";
 import CreateAdBanner from "./components/CreateAdBanner";
 import ColorfulText from "./components/ColorfulText";
 
-interface Game {
+export interface Game {
   id: string;
   title: string;
   bannerUrl: string;
@@ -46,7 +46,7 @@ function App() {
           })}
         </div>
       )}
-      <CreateAdBanner />
+      <CreateAdBanner games={gamesData} />
     </div>
   );
 }
