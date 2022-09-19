@@ -10,6 +10,7 @@ import { THEME } from "../../theme";
 import logoImg from "../../assets/logo-nlw-esports.png";
 import { Heading } from "../../components/Heading";
 import { AdCard } from "../../components/AdCard";
+import { AdModal } from "../../components/AdModal";
 
 interface GameRouteProps {
   id: string;
@@ -34,6 +35,8 @@ export function Game() {
 
   const [ads, setAds] = useState<AdProps[]>([]);
 
+  const [discordSelect, setDiscordSelect] = useState("");
+
   useEffect(() => {
     fetch(`http://127.0.0.1:3333/games/${game.id}/ads`)
       .then((res) => {
@@ -46,6 +49,19 @@ export function Game() {
         console.log(e.message);
       });
   }, []);
+
+  async function getDiscordUser(adsId: string) {
+    fetch(`http://127.0.0.1:3333/ads/${adsId}/discord`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setDiscordSelect(data.discord);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  }
 
   return (
     <Background>
@@ -71,11 +87,18 @@ export function Game() {
           data={ads}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => {
-            return <AdCard ad={item} onConnect={() => {}} />;
+            return (
+              <AdCard ad={item} onConnect={() => getDiscordUser(item.id)} />
+            );
           }}
           ListEmptyComponent={
             <Text style={{ color: "#fff" }}>No ads yet.</Text>
           }
+        />
+        <AdModal
+          visible={discordSelect !== ""}
+          onClose={() => setDiscordSelect("")}
+          discord={discordSelect}
         />
       </SafeAreaView>
     </Background>
