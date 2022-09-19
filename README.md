@@ -11,7 +11,8 @@ An app to help users find a gaming partner.
 
 **Server:** Node, Express
 
+## Mobile Screenshots
 
-![Alt text](screenshots/mobile1.png?raw=true "Mobile Home")
+<img src='screenshots/mobile1.png' width='420'>
 
-![Alt text](screenshots/mobile2.png?raw=true "Mobile Gaming Partner Ads")
+<img src='screenshots/mobile2.png' width='420'>
