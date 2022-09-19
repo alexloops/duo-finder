@@ -11,3 +11,7 @@ An app to help users find a gaming partner.
 
 **Server:** Node, Express
 
+
+![Alt text](screenshots/mobile1.png?raw=true "Mobile Home")
+
+![Alt text](screenshots/mobile2.png?raw=true "Mobile Gaming Partner Ads")
