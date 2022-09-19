@@ -13,8 +13,8 @@ An app to help users find a gaming partner.
 
 ## Web Screenshots
 
-<img src='screenshots/web1.png'>
-<img src='screenshots/web2.png'>
+<img src='screenshots/web1.png' width='830'>
+<img src='screenshots/web2.png' width='830'>
 
 ## Mobile Screenshots
 
